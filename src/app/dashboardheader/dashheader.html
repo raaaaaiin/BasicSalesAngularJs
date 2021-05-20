@@ -1,0 +1,42 @@
+<div class="socdiv">
+	<div style="height:72%;">
+		<div style="height:80%">
+			<div style="width:100px; height:50px">
+				<img style="border-radius:50%;margin-left:5px;padding:0;" class="profilelogo" (click)='sendData()' [src]='profilepic' /><br />
+			</div>
+			<div *ngIf="focus">
+
+				<img style="margin-left:12px;margin-top:10px;padding:0;" class="funclogo" (click)='sendData()' [src]='defaultselection' /><br />
+			</div>
+		</div>
+
+	</div>
+	<a class="soclogo fblogo" href="www.wewe.com" title="photo" id="photo"></a>
+	<br><br><br>
+	<a class="soclogo twitterlogo" href="www.wewe.com" title="photo" id="photo"></a>
+	<br><br><br>
+	<a class="soclogo ytlogo" href="www.wewe.com" title="photo" id="photo"></a>
+
+</div>
+
+<div class='header' style='position:fixed; z-index:2;'>
+
+	<table>
+		<th class='title'><input class='title' type='submit' value='NLx'></th>
+		<th class='subs'><input id='mainbutton' routerLink='/home' type='submit' value='Products' (click)="clickproducttab();home();hide(true)"></th>
+		<th class='subs'><input id='mainbutton' routerLink='/dashboard' type='submit' value='Profile' (click)="clicksignup();hide(false)"></th>
+		<th class='subs'><input id='mainbutton' routerLink='/login' type='submit' value='Logout' (click)="clicklogout();hide(false)"> </th>
+		<th class='subs'><input id='mainbutton' routerLink='/about' type='submit' value='About Us' (click)="clicksignup();hide(false)"></th>
+
+		<th colspan="5">
+			<div class="search-container">
+				<form *ngIf="focus" action="/search" method="get">
+					<input class="search expandright" id="searchright" type="search" name="q" placeholder="Search" [(ngModel)]='listFilter'>
+					<label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
+				</form>
+			</div>
+		</th>
+	</table>
+
+
+</div>

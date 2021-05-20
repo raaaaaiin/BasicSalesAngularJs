@@ -1,0 +1,28 @@
+<div class='main'>
+
+  <hd-root *ngIf='header' (clicklogoEvent)="recieveData($event)" (clickProduct)="recieveProduct($event)" (searchQuery)="recieveQuery($event)"></hd-root>
+  <dahboardhd-root *ngIf='!header' (clicklogoEvent)="recieveData($event)" (clickProduct)="recieveProduct($event)" (searchQuery)="recieveQuery($event)"></dahboardhd-root>
+  <br />
+  <router-outlet *ngIf="!isProducts"></router-outlet>
+  <wall *ngIf="isProducts"></wall>
+  <prod-box *ngIf="isProducts" (clickProduct)="recieveProduct($event)" (signalProductEmit)='recieveSignal($event)'[changeview]='changeview' [searchQuery]='searchQuery'>
+    <div ng-init="callBack()"></div>
+  </prod-box>
+  <!--<wall></wall>
+  <div id='interchange' class='bodyproduct'>
+
+
+    <image-slide></image-slide>
+    <br />
+
+    <categ-box></categ-box>
+    <br />
+
+    <br />
+
+  </div>
+  <footer-box></footer-box>
+  -->
+
+</div>
+

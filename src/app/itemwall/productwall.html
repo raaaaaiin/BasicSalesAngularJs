@@ -1,0 +1,76 @@
+<div *ngFor="let product of items" class="body activated">
+  <div class='container' style='height:100%'>
+    <div class='container' style='width:50%; display:inline-block; overflow: hidden'>
+      <div class='container' style='height: 10%'>
+        <div style='height: 100%; width:60%; vertical-align: middle;display : flex;align-items : center;'>
+          <a class="backbut"  (click)="backProduct()" title="photo" id="photo" style="    background-image: url(assets/icons/backbutt.png);"></a>
+          <a class="profpic"  title="photo" id="photo" style="    background-image: url(assets/user/Raineer.jpg);"></a>
+          <span style='' class='profiletext'>{{product.uploader}}</span>
+        </div>
+        <div style='height: 100%; width:40%;text-align: right;' >
+          <span class='pricewall' style="margin-right:20px">{{product.price | currency:'₱':true}}</span>
+        </div>
+      </div>
+      <div class='container' style='height: 5%'>
+        <div style='height: 100%; width:80%'>
+          <div style="position: absolute; z-index: 2000; overflow:hidden" [style.width.px]="(product.ratings * 15)">
+            <span class='ratingswall'>★★★★★</span>
+          </div>
+          <div>
+            <span class='ratingswall'>☆☆☆☆☆</span>
+            <span class='ratingcountwall' style='margin-right:84px;'>({{product.ratings}})</span>
+          </div>
+          
+        </div>
+        <div style='height: 100%; width:20%;text-align: right;vertical-align: top;'>
+          <span style='margin-right:20px' class='oldpricewall' >{{product.oldprice | currency:'₱':true}}</span>
+        </div>
+      </div>
+      <div class='container' style='height: 20%'>
+        <div style='height: 100%; width:100%; vertical-align: middle;display : flex;align-items : center;'>
+          <span class='productnamewall'>{{product.productname}}</span>
+        </div>
+      </div>
+      <div class='container' style='height: 2%'>
+        <div style='height: 100%; width:50%'></div>
+        <div style='height: 100%; width:50%'></div>
+      </div>
+      <div class='container' style='height:40%'>
+        <div style='height: 100%; width:100%; overflow:hidden'>
+          <p class='detailswall' style='width :70%; height: 100px; margin-left:10px; text-align:justify; padding:10px'>{{product.description}}</p>
+        </div>
+      </div>
+      <div class='container' style='height: 14%'>
+        <div style='height: 100%; width:50%'></div>
+        <div style='height: 100%; width:50%'></div>
+      </div>
+      <div class='container' style='height: 20%'>
+        <div style='height: 100%; width:60%'>
+          <span class='locwall'>&#9906; {{product?.loc}}</span>
+          <span class='quantitywall'>({{product?.quantity}})</span>
+        </div>
+        <div style='width:30%;'>
+          <div style='float:right'>
+            <div class="containerupdate">
+              <a  class="btn effect01" target="_blank">
+                <span>Add to cart</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div style='width:30%'>
+          <div style='float:right'>
+            <div class="containerupdate">
+              <a  class="btn effect01" target="_blank">
+                <span>Buy now</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style='width:50%'>
+      <img class='imglist' [src]='product?.imagesource' />
+    </div>
+  </div>
+</div>

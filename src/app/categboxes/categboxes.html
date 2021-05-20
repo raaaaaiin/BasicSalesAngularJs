@@ -1,0 +1,12 @@
+<div class='bodycateg' style=' display:block;align-items : center;'>
+  <div style="width:100% vertical-align: middle;display : flex;align-items : center;">
+    <div *ngFor="let categ of categBox" class='showcateg' style='text-align:center;margin: auto auto; '>
+      <div (click)="changeFilterCateg(categ.categoryName)">
+        <img class='categimglist' [src]='categ.categorysrc' /><br>
+
+        <span>{{categ.categoryName}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
